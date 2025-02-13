@@ -10,7 +10,7 @@
     reveal_type(Coordinates.__init__)  # N: Revealed type is "def (self: main.Coordinates, x: builtins.int, y: builtins.int)"
 
 
-- case: dataklasses__init__
+- case: dataklasses__repr__
   main: |
     from dataklasses import dataklass
     
