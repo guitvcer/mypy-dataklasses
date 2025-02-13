@@ -8,3 +8,15 @@
         y: int
     
     reveal_type(Coordinates.__init__)  # N: Revealed type is "def (self: main.Coordinates, x: builtins.int, y: builtins.int)"
+
+
+- case: dataklasses__init__
+  main: |
+    from dataklasses import dataklass
+    
+    @dataklass
+    class Coordinates:
+        x: int
+        y: int
+    
+    reveal_type(Coordinates.__repr__)  # N: Revealed type is "def (self: main.Coordinates) -> builtins.str"

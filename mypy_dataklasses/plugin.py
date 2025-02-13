@@ -17,7 +17,7 @@ class DataklassesPlugin(Plugin):
 
 
 def _class_decorator_hook(ctx: ClassDefContext) -> None:
-    args = [
+    init_args = [
         Argument(
             variable=Var(name=name, type=node.type),
             type_annotation=node.type,
@@ -30,11 +30,18 @@ def _class_decorator_hook(ctx: ClassDefContext) -> None:
         ctx.api,
         ctx.cls,
         "__init__",
-        args=args,
+        args=init_args,
         return_type=NoneType(),
     )
 
-    # TODO: __repr__
+    add_method_to_class(
+        ctx.api,
+        ctx.cls,
+        "__repr__",
+        args=[],
+        return_type=ctx.api.named_type("builtins.str"),
+    )
+
     # TODO: __eq__
     # TODO: __match_args__
 
