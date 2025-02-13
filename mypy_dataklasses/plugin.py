@@ -14,6 +14,8 @@ class DataklassesPlugin(Plugin):
         if fullname == "main.dataklass":
             return _class_decorator_hook
 
+        return None
+
 
 def _class_decorator_hook(ctx: ClassDefContext) -> None:
     args = [
