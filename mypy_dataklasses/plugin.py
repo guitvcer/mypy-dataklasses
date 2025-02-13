@@ -2,7 +2,7 @@ from typing import Callable
 
 from mypy.nodes import Argument, Var, ArgKind
 from mypy.plugin import ClassDefContext, Plugin
-from mypy.plugins.common import add_method_to_class
+from mypy.plugins.common import add_attribute_to_class, add_method_to_class
 from mypy.types import NoneType
 
 
@@ -57,7 +57,14 @@ def _class_decorator_hook(ctx: ClassDefContext) -> None:
         return_type=ctx.api.named_type("builtins.bool"),
     )
 
-    # TODO: __match_args__
+    add_attribute_to_class(
+        ctx.api,
+        ctx.cls,
+        "__match_args__",
+        typ=ctx.api.named_type(
+            "builtins.tuple", args=[ctx.api.named_type("builtins.str")]
+        ),
+    )
 
 
 def plugin(version: str) -> type[DataklassesPlugin]:
