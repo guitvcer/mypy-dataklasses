@@ -20,3 +20,15 @@
         y: int
     
     reveal_type(Coordinates.__repr__)  # N: Revealed type is "def (self: main.Coordinates) -> builtins.str"
+
+
+- case: dataklasses__eq__
+  main: |
+    from dataklasses import dataklass
+    
+    @dataklass
+    class Coordinates:
+        x: int
+        y: int
+    
+    reveal_type(Coordinates.__eq__)  # N: Revealed type is "def (self: main.Coordinates, other: main.Coordinates) -> builtins.bool"

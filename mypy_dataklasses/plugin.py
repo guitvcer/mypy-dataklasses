@@ -42,7 +42,21 @@ def _class_decorator_hook(ctx: ClassDefContext) -> None:
         return_type=ctx.api.named_type("builtins.str"),
     )
 
-    # TODO: __eq__
+    add_method_to_class(
+        ctx.api,
+        ctx.cls,
+        "__eq__",
+        args=[
+            Argument(
+                variable=Var(name="other", type=ctx.api.named_type(ctx.cls.fullname)),
+                type_annotation=ctx.api.named_type(ctx.cls.fullname),
+                initializer=None,
+                kind=ArgKind.ARG_POS,
+            ),
+        ],
+        return_type=ctx.api.named_type("builtins.bool"),
+    )
+
     # TODO: __match_args__
 
 
