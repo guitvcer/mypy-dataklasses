@@ -8,5 +8,3 @@
         y: int
     
     reveal_type(Coordinates.__init__)  # N: Revealed type is "def (self: main.Coordinates, x: builtins.int, y: builtins.int)"
-
-# TODO: Test with keyword arguments
