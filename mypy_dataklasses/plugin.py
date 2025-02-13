@@ -8,10 +8,10 @@ from mypy.types import NoneType
 
 class DataklassesPlugin(Plugin):
     def get_class_decorator_hook(
-            self,
-            fullname: str,
+        self,
+        fullname: str,
     ) -> Optional[Callable[[ClassDefContext], None]]:
-        if fullname == 'main.dataklass':
+        if fullname == "main.dataklass":
             return _class_decorator_hook
 
 
@@ -25,7 +25,7 @@ def _class_decorator_hook(ctx: ClassDefContext) -> None:
         )
         for name, node in ctx.cls.info.names.items()
     ]
-    add_method_to_class(ctx.api, ctx.cls, '__init__', args=args, return_type=NoneType())
+    add_method_to_class(ctx.api, ctx.cls, "__init__", args=args, return_type=NoneType())
 
     # TODO: __repr__
     # TODO: __eq__
