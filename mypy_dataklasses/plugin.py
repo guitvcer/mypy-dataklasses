@@ -25,7 +25,13 @@ def _class_decorator_hook(ctx: ClassDefContext) -> None:
         )
         for name, node in ctx.cls.info.names.items()
     ]
-    add_method_to_class(ctx.api, ctx.cls, "__init__", args=args, return_type=NoneType())
+    add_method_to_class(
+        ctx.api,
+        ctx.cls,
+        "__init__",
+        args=args,
+        return_type=NoneType(),
+    )
 
     # TODO: __repr__
     # TODO: __eq__

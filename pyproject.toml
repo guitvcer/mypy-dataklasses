@@ -20,3 +20,4 @@ build-backend = "poetry.core.masonry.api"
 [tool.poetry.group.dev.dependencies]
 pytest-mypy-plugins = "^3.2.0"
 ruff = "^0.9.6"
+flake8 = "^7.1.1"
