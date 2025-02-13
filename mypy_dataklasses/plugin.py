@@ -1,4 +1,4 @@
-from typing import Callable, Optional
+from typing import Callable
 
 from mypy.nodes import Argument, Var, ArgKind
 from mypy.plugin import ClassDefContext, Plugin
@@ -8,9 +8,8 @@ from mypy.types import NoneType
 
 class DataklassesPlugin(Plugin):
     def get_class_decorator_hook(
-        self,
-        fullname: str,
-    ) -> Optional[Callable[[ClassDefContext], None]]:
+        self, fullname: str
+    ) -> Callable[[ClassDefContext], None] | None:
         if fullname == "main.dataklass":
             return _class_decorator_hook
 
