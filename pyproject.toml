@@ -5,12 +5,38 @@ description = "MyPy Plugin for dataklasses"
 authors = [
     {name = "guitvcer",email = "abdrakhman.galaxy.s2@gmail.com"}
 ]
-license = {text = "MIT License"}
+license = {text = "MIT"}
 readme = "README.md"
+keywords = [
+    "mypy",
+    "dataklasses",
+    "typing",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+
+    "Intended Audience :: Developers",
+
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+
+    "Operating System :: OS Independent",
+
+    "Topic :: Software Development :: Libraries :: Python Modules",
+
+    "Typing :: Typed",
+]
+
 requires-python = ">=3.10,<4.0"
 dependencies = [
     "dataklasses (>=0.0.1,<0.0.2)"
 ]
+
+[project.urls]
+Repository = "https://github.com/guitvcer/mypy-dataklasses"
 
 
 [build-system]
