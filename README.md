@@ -6,11 +6,10 @@
 
 A MyPy plugin for [dataklases](https://github.com/dabeaz/dataklasses).
 
-[//]: # (TODO: Publish)
-[//]: # (## Installation)
-[//]: # (```bash)
-[//]: # (pip install mypy-dataklasses)
-[//]: # (```)
+## Installation
+```bash
+pip install mypy-dataklasses
+```
 
 ## Usage
 Enable plugin in mypy configuration. [MyPy Docs](https://mypy.readthedocs.io/en/stable/extending_mypy.html#configuring-mypy-to-use-plugins).

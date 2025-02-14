@@ -1,6 +1,6 @@
 [project]
 name = "mypy-dataklasses"
-version = "0.1.0"
+version = "0.1.1"
 description = "MyPy Plugin for dataklasses"
 authors = [
     {name = "guitvcer",email = "abdrakhman.galaxy.s2@gmail.com"}
