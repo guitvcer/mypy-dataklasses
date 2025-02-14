@@ -1,0 +1,19 @@
+- case: dataklasses
+  parametrized:
+    - name: __init__
+      expected: 'N: Revealed type is "def (self: main.Coordinates, x: builtins.int, y: builtins.int)"'
+    - name: __repr__
+      expected: 'N: Revealed type is "def (self: main.Coordinates) -> builtins.str"'
+    - name: __eq__
+      expected: 'N: Revealed type is "def (self: main.Coordinates, other: main.Coordinates) -> builtins.bool"'
+    - name: __match_args__
+      expected: 'N: Revealed type is "builtins.tuple[builtins.str, ...]"'
+  main: |
+    from dataklasses import dataklass
+    
+    @dataklass
+    class Coordinates:
+        x: int
+        y: int
+    
+    reveal_type(Coordinates.{{ name }})  # {{ expected }}

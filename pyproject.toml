@@ -1,0 +1,49 @@
+[project]
+name = "mypy-dataklasses"
+version = "0.1.1"
+description = "MyPy Plugin for dataklasses"
+authors = [
+    {name = "guitvcer",email = "abdrakhman.galaxy.s2@gmail.com"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+keywords = [
+    "mypy",
+    "dataklasses",
+    "typing",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+
+    "Intended Audience :: Developers",
+
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+
+    "Operating System :: OS Independent",
+
+    "Topic :: Software Development :: Libraries :: Python Modules",
+
+    "Typing :: Typed",
+]
+
+requires-python = ">=3.10,<4.0"
+dependencies = [
+]
+
+[project.urls]
+Repository = "https://github.com/guitvcer/mypy-dataklasses"
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.dev.dependencies]
+pytest-mypy-plugins = "^3.2.0"
+ruff = "^0.9.6"
+flake8 = "^7.1.1"
+wemake-python-styleguide = "^1.0.0"
