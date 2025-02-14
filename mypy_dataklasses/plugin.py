@@ -10,7 +10,7 @@ class DataklassesPlugin(Plugin):
     def get_class_decorator_hook(
         self, fullname: str
     ) -> Callable[[ClassDefContext], None] | None:
-        if fullname == "main.dataklass":
+        if "dataklass" in fullname:
             return _class_decorator_hook
 
         return None
